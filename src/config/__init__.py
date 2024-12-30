@@ -7,7 +7,7 @@ import yaml
 def load_config(config_path=None):
     """Load configuration from YAML file"""
     if config_path is None:
-        config_path = osp.join(osp.dirname(osp.abspath(__file__)), 'knowledge_config.yaml')
+        config_path = osp.join(osp.dirname(osp.abspath(__file__)), 'default_config.yaml')
 
     try:
         with open(config_path, 'r') as f:
