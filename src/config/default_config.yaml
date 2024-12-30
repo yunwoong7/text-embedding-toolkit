@@ -1,0 +1,38 @@
+# src/config/knowledge_config.yaml
+# Default configuration for text embedding toolkit
+
+# AWS Bedrock settings
+bedrock:
+  region: "us-west-2"
+  embedding:
+    model_id: "amazon.titan-embed-text-v2:0"
+    dimension: 1024
+    batch_size: 32
+  llm:
+    model_id: "anthropic.claude-3-5-haiku-20241022-v1:0"
+    max_tokens: 1024
+    temperature: 0.0
+
+# Text chunking settings
+chunking:
+  chunk_size: 1000
+  overlap: 100
+
+# Document settings
+document:
+  context_method: "window"  # "window" or "full"
+  context_window: 1000      # characters before and after chunk when using window method
+
+# OpenSearch settings
+opensearch:
+  mode: "local"  # "local" or "aws"
+  local:
+    host: "localhost"
+    port: 9200
+  aws:
+    host: "YOUR-OPENSEARCH-DOMAIN"
+    port: 443
+    region: "us-west-2"
+  common:
+    index_name: "test_embeddings"
+    bulk_size: 50
